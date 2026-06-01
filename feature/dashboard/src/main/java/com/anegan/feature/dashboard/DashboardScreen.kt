@@ -69,8 +69,6 @@ fun getCategoryIcon(title: String): ImageVector {
         "Document Hub" -> Icons.Rounded.Hub
         "File Manager" -> Icons.Rounded.FolderOpen
         "Wi-Fi & FTP Transfer" -> Icons.Rounded.Dns
-        "SMB File Sharing" -> Icons.Rounded.Cloud
-        "APK Extractor" -> Icons.Rounded.GetApp
         "Smart Saver" -> Icons.Rounded.CloudDone
         "Documents" -> Icons.Rounded.MenuBook
         "PDF Tools" -> Icons.Rounded.PictureAsPdf
@@ -86,8 +84,6 @@ fun getCategoryIcon(title: String): ImageVector {
         "Image Watermark" -> Icons.Rounded.BrandingWatermark
         "PDF Reader & Editor" -> Icons.Rounded.Gesture
         "Calculator" -> Icons.Rounded.Calculate
-        "Flashlight" -> Icons.Rounded.Highlight
-        "Compass" -> Icons.Rounded.NearMe
         "Currency Converter" -> Icons.Rounded.CurrencyExchange
         "Offline Comm" -> Icons.Rounded.SatelliteAlt
         "Color Picker" -> Icons.Rounded.Palette
@@ -131,8 +127,6 @@ val docsGroup = listOf(
 
 val utilityGroup = listOf(
     Category("Calculator", "Offline arithmetic calculator", "🧮"),
-    Category("Flashlight", "Torch, strobe & SOS beacon", "🔦"),
-    Category("Compass", "Offline bearing & orientation sensor", "🧭"),
     Category("Currency Converter", "Offline exchange rate converter", "𒒱"),
     Category("Unit Converter", "Offline length, mass, data size conversion", "⚖️"),
     Category("Voice Recorder", "Record voice with audio waveform", "🎙️")
@@ -142,13 +136,11 @@ val securityGroup = listOf(
     Category("File Manager", "Browse, zip, manage your files", "📁"),
     Category("Vault", "Encrypted secure document storage", "🔒"),
     Category("Smart Saver", "Structured organizer for receipts, IDs & certificates", "💾"),
-    Category("APK Extractor", "Backup and share your installed application packages", "📲"),
     Category("Developer Tools", "Hash, Base64, QR codes", "💻")
 )
 
 val transferGroup = listOf(
-    Category("Wi-Fi & FTP Transfer", "Share files locally with standard web browsers or FTP clients", "⚡"),
-    Category("SMB File Sharing", "Browse & transfer files on network shares", "🗄️")
+    Category("Wi-Fi & FTP Transfer", "Share files locally with standard web browsers or FTP clients", "⚡")
 )
 
 val learningGroup = listOf(

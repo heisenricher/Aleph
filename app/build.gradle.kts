@@ -29,8 +29,8 @@ android {
         applicationId = "com.anegan.app"
         minSdk = 29
         targetSdk = 35
-        versionCode = 22
-        versionName = "3.2.5"
+        versionCode = 23
+        versionName = "3.4.0"
         
         ndk {
             abiFilters.addAll(listOf("arm64-v8a"))
@@ -66,6 +66,13 @@ android {
     
     lint {
         abortOnError = false
+    }
+    
+    packaging {
+        resources {
+            excludes.add("org/bouncycastle/pqc/crypto/**/*.properties")
+            excludes.add("org/bouncycastle/pqc/crypto/**/*.txt")
+        }
     }
     
     compileOptions {
@@ -104,9 +111,7 @@ dependencies {
     implementation(project(":feature:file-manager"))
     implementation(project(":feature:document-reader"))
     implementation(project(":feature:wifi-transfer"))
-    implementation(project(":feature:apk-tools"))
     implementation(project(":feature:saver"))
-    implementation(project(":feature:smb-share"))
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.tom-roush:pdfbox-android:2.0.27.0")
     

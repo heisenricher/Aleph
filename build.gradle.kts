@@ -17,8 +17,3 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20")
     }
 }
-subprojects {
-    configurations.all {
-        exclude(group = "org.bouncycastle")
-    }
-}

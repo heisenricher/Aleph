@@ -51,9 +51,7 @@ import com.anegan.feature.conversion.VideoPlayerScreen
 import com.anegan.feature.conversion.AudioPlayerScreen
 import com.anegan.feature.conversion.PdfPageOrganizerScreen
 import com.anegan.feature.conversion.PdfReaderEditorScreen
-import com.anegan.feature.conversion.CompassScreen
 import com.anegan.feature.conversion.CalculatorScreen
-import com.anegan.feature.conversion.FlashlightScreen
 import com.anegan.feature.conversion.CurrencyConverterScreen
 import com.anegan.feature.conversion.VoiceRecorderScreen
 import com.anegan.feature.history.HistoryScreen
@@ -64,9 +62,7 @@ import com.anegan.feature.vault.VaultScreen
 import com.anegan.feature.filemanager.FileManagerScreen
 import com.anegan.feature.filemanager.StorageAnalyzerScreen
 import com.anegan.feature.wifitransfer.WifiTransferScreen
-import com.anegan.feature.apktools.ApkToolsScreen
 import com.anegan.feature.saver.SmartSaverScreen
-import com.anegan.feature.smbshare.SmbShareScreen
 
 class MainActivity : FragmentActivity() {
     private val intentFlow = kotlinx.coroutines.flow.MutableSharedFlow<android.content.Intent>(extraBufferCapacity = 1)
@@ -158,7 +154,6 @@ class MainActivity : FragmentActivity() {
                     act == "com.anegan.action.SHORTCUT_PDF"     -> selectedCategory = "PDF Tools"
                     act == "com.anegan.action.SHORTCUT_HISTORY" -> selectedCategory = "History"
                     act == "com.anegan.action.SHORTCUT_NOTES"   -> selectedCategory = "Notes"
-                    act == "com.anegan.action.SHORTCUT_COMPASS" -> selectedCategory = "Compass"
                     act == android.content.Intent.ACTION_SEND && typ != null -> {
                         val streamUri = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                             intentVal.getParcelableExtra(android.content.Intent.EXTRA_STREAM, android.net.Uri::class.java)
@@ -372,10 +367,6 @@ class MainActivity : FragmentActivity() {
                                          })
                                      targetCategory == "Wi-Fi & FTP Transfer" ->
                                         WifiTransferScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null })
-                                    targetCategory == "SMB File Sharing" ->
-                                        SmbShareScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null })
-                                    targetCategory == "APK Extractor" ->
-                                        ApkToolsScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null })
                                     targetCategory == "Smart Saver" ->
                                         SmartSaverScreen(
                                             onPresetSelected = { category, params ->
@@ -414,12 +405,8 @@ class MainActivity : FragmentActivity() {
                                         ImageWatermarkScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
                                      targetCategory == "PDF Organizer" || targetCategory == "PDF Reader & Editor" ->
                                          PdfReaderEditorScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
-                                     targetCategory == "Compass" ->
-                                         CompassScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
                                     targetCategory == "Calculator" ->
                                         CalculatorScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
-                                    targetCategory == "Flashlight" ->
-                                        FlashlightScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
                                     targetCategory == "Currency Converter" ->
                                         CurrencyConverterScreen(onBack = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); selectedCategory = null; presetParams = null })
 
